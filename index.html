@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk&display=swap" rel="stylesheet">
+    <link rel="icon" href="images/favicon-32x32.png">
+    <title>Interactive card</title>
+</head>
+<body>
+    <div class="imgcon">
+        <div class="cardscon">
+            <div class="card-front">
+                <img src="images/card-logo.svg" alt="">
+                <p id="card-num">0000 0000 0000 0000</p>
+                <p id="card-name">jane appleseed</p>
+                <p id="card-exp"><span id="card-mm">00</span>/<span id="card-yy">00</span></p>
+            </div>
+            <div class="card-back">
+                <p id="card-cvc">000</p>
+            </div>
+        </div>
+    </div>
+    <main>
+        <div class="con">
+            <div class="name input">
+                <label for="name">cardholder name</label>
+                <input type="text" id="name" placeholder="e.g. Jane Appleseed">
+                <p class="error name-error"></p>
+            </div>
+            <div class="card-number input">
+                <label for="card-number">card number</label>
+                <input type="text" id="card-number" placeholder="e.g. 1234 5678 9123 0000">
+                <p class="error num-error"></p>
+            </div>
+            <div class="info">
+                <div class="exp-date input">
+                    <label for="exp">exp.date (MM/YY)</label>
+                    <div id="exp">
+                        <input type="text" id="mm" placeholder="MM">
+                        <input type="text" id="yy" placeholder="YY">
+                    </div>
+                    <p class="error exp-error"></p>
+                </div>
+                <div class="cvc input">
+                    <label for="cvc">cvc</label>
+                    <input type="text" id="cvc" placeholder="e.g. 123">
+                    <p class="error cvc-error"></p>
+                </div>
+            </div>
+            <button>Confirm</button>
+        </div>
+        <div class="done">
+            <img src="images/icon-complete.svg" alt="">
+            <p>thank you!</p>
+            <p>We've added your card details</p>
+            <button>Continue</button>
+        </div>
+    </main>
+    <script src="js/script.js"></script>
+</body>
+</html>

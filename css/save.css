@@ -1,0 +1,128 @@
+.cardscon{
+    width: 30vw;
+    height: 30vw;
+    /* background-color: black; */
+    position: absolute;
+    right: -150px;
+    top: 50%;
+    transform: translate(0, -50%);
+    min-width: 400px;
+    min-height: 400px;
+}
+.card-front{
+    /* display:none; */
+    background-image: url(../images/bg-card-front.png);
+    background-repeat: no-repeat;
+    background-size:contain;
+    position: absolute;
+    top: 0%;
+    left: 0px;
+    width: 80%;
+    height: 50%;
+}
+.card-back{
+    /* display:none; */
+    background-image: url(../images/bg-card-back.png);
+    background-repeat: no-repeat;
+    background-size:contain;
+    position: absolute;
+    bottom: 0px;
+    right: 0px;
+    width: 80%;
+    height: 50%;
+}
+.card-front img{
+    height: 20%;
+    position:absolute;
+    top: 10%;
+    left: 5%;
+}
+.card-front p{
+    color: var(--Light-grayish-violet)
+}
+#card-num{
+    position: absolute;
+    bottom: 40%;
+    left: 50%;
+    transform: translate(-50%);
+    white-space: nowrap;
+    font-size: 2vw;
+}
+@media (max-width: 900px){
+    .con{
+        font-size: 15px;
+    }
+    .input input{
+        font-size: 15px;
+    }
+    .cardscon{
+        min-width: 350px;
+        min-height: 350px;
+    }
+}
+@media (max-width: 750px){
+    body{
+        flex-direction:column;
+    }
+    main{
+        width: 100%;
+        height: 70%;
+    }
+    .imgcon{
+        width: 100%;
+        height: 30%;
+    }
+    .con{
+        left:0px;
+        width: 80%;
+    }
+    .cardscon{
+        /* background-color: black; */
+        top: 0px;
+        left: 50%;
+        width: 100%;
+        height: 100%;
+        transform: translate(-50%, 0px);
+        min-height: 0px;
+    }
+    .card-front{
+        /* width: 500px; */
+        width: 350px;
+        height: 190.19px;
+        left: 5%;
+        top: 100%;
+        transform: translateY(-50%);
+        z-index: 1;
+    }
+    .card-back{
+        width: 350px;
+        height: 190.19px;
+        top: 0%;
+        left: 95%;
+        transform: translateX(-100%) translateY(10%);
+    }
+}
+@media (max-width: 550px){
+    .card-front{
+        /* width: 500px; */
+        width: 300px;
+        height: 217.37px;
+        left: 5%;
+        top: 100%;
+        transform: translateY(-50%);
+        z-index: 1;
+    }
+    .card-back{
+        width: 300px;
+        height: 217.37px;
+        top: 0%;
+        left: 95%;
+        transform: translateX(-100%) translateY(10%);
+    }
+}
+
+                <img src="images/card-logo.svg" alt="">
+                <p id="card-num">0000 0000 0000 0000</p>
+                <p id="card-name">jane appleseed</p>
+                <p id="card-exp">00/00</p>
+            

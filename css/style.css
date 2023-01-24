@@ -1,0 +1,349 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Space Grotesk', sans-serif;
+    /* font-size: 18px; */
+    box-sizing: border-box;
+}
+:root{
+    /* active input border */
+    /* hsl(249, 99%, 64%) to hsl(278, 94%, 30%); */
+    /* input errors */
+    --Red: hsl(0, 100%, 66%);
+
+    --Light-grayish-violet: hsl(270, 3%, 87%);
+    --Dark-grayish-violet: hsl(279, 6%, 55%);
+    --Very-dark-violet: hsl(278, 68%, 11%);
+    --width: 1.8244897;
+}
+body{
+    height: 100vh;
+    display: flex;
+}
+main{
+    height: 100%;
+    width: 70%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.imgcon{
+    height: 100%;
+    width: 30%;
+    background-image: url(../images/bg-main-desktop.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}
+.con, .done{
+    display:flex;
+    flex-direction: column;
+    width: 50%;
+    max-width: 400px;
+    position:relative;
+    left: 50px;
+    font-size: 18px;
+}
+.done{
+    display:flex;
+    align-items: center;
+    display: none;
+}
+.done img{
+    width: 75px;
+    margin-bottom: 30px;
+}
+.done p:first-of-type{
+    text-transform: uppercase;
+    font-size: 23px;
+    font-weight: bold;
+    letter-spacing: 2.5px;
+    margin-bottom: 15px;
+}
+.done p:nth-of-type(2){
+    color: var(--Dark-grayish-violet);
+    letter-spacing: 1.5px;
+    margin-bottom: 50px;
+    white-space: nowrap;
+}
+.done button{
+    width: 100%;
+}
+
+
+.input{
+    display:flex;
+    flex-direction: column;
+    margin-bottom: 30px;
+    position: relative;
+}
+.input input{
+    outline: none;
+    border: 2px solid var(--Light-grayish-violet);
+    border-radius: 5px;
+    padding: 7px;
+    margin-top: 5px;
+    padding-left: 15px;
+    padding-right: 15px;
+    font-size: 18px;
+}
+label{
+    color: var(--Very-dark-violet);
+    text-transform: uppercase;
+    white-space: nowrap;
+}
+.info{
+    display:flex;
+    justify-content: space-between;
+}
+.exp-date{
+    width: 50%;
+}
+#exp{
+    display:flex;
+    justify-content: space-between;
+}
+#exp input{
+    width: 45%;
+}
+.cvc{
+    width: 45%;
+}
+button{
+    color: var(--Light-grayish-violet);
+    background-color: var(--Very-dark-violet);
+    border-radius: 5px;
+    padding: 10px;
+    font-weight: bold;
+    font-size: 16px;
+}
+/* 447 245 */
+.card-front{
+    width: 447px;
+    height: calc(447px / var(--width));
+    /* height: 245px; */
+    background-image: url(../images/bg-card-front.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    position: absolute;
+    top: 50%;
+    right: 0px;
+    transform: translateY(-110%) translateX(25%);
+}
+.card-back{
+    width: 447px;
+    height: calc(447px / var(--width));
+    /* height: 245px; */
+    background-image: url(../images/bg-card-back.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    position: absolute;
+    top: 50%;
+    right: 0px;
+    transform:  translateX(50%);
+}
+.imgcon p{
+    color: white;
+    letter-spacing: 3.5px;
+}
+.card-front img{
+    position: absolute;
+    top: 10%;
+    left: 6%;
+    height: 20%;
+}
+#card-num{
+    position: absolute;
+    bottom: 30%;
+    left: 50%;
+    transform: translate(-50%);
+    white-space: nowrap;
+    font-size: 28px;
+    font-weight: bold;
+}
+#card-name{
+    position: absolute;
+    bottom: 10%;
+    left: 9%;
+    font-size: 14px;
+    text-transform: uppercase;
+}
+#card-exp{
+    position: absolute;
+    bottom: 10%;
+    right: 9%;
+    font-size: 14px;
+}
+#card-cvc{
+    position: absolute;
+    top: 45%;
+    right: 12%;
+}
+.error{
+    color: var(--Red);
+    position: absolute;
+    bottom: -20px;
+    left: 10px;
+    font-weight: 800;
+    font-size: 14px
+}
+.inputerror{
+    border: 2px solid var(--Red) !important;
+}
+input:focus{
+    border: 2px solid hsl(278, 94%, 30%);
+}
+
+
+@media (max-width: 1200px){
+    .card-back, .card-front{
+        width: 350px;
+        height: calc(350px / var(--width))
+    }
+    #card-num{
+        font-size: 20px;
+    }
+    #card-name{
+        font-size: 12px;
+    }
+    #card-exp{
+        font-size: 12px;
+    }
+    #card-cvc{
+        font-size: 12px;
+    }
+}
+@media (max-width: 900px){
+    .card-back, .card-front{
+        width: 250px;
+        height: calc(250px / var(--width))
+    }
+    .con{
+        font-size: 14px;
+    }
+    .done p:first-of-type{
+        font-size: 23px;
+    }
+    .done p:nth-of-type(2){
+        font-size: 15px;
+    }
+    .input input{
+        font-size: 14px;
+    }
+    #card-num{
+        font-size: 14px;
+    }
+    #card-name{
+        font-size: 9px;
+    }
+    #card-exp{
+        font-size: 9px;
+    }
+    #card-cvc{
+        font-size: 9px;
+    }
+    .error{
+        font-size: 13px;
+    }
+}
+@media (max-width: 650px){
+    body{
+        flex-direction: column;
+        height: fit-content
+    }
+    main{
+        width:100%;
+        margin-top: 100px;
+    }
+    .con, .done{
+        width: 80%;
+        left: 0px;
+    }
+    .imgcon{
+        width: 100%;
+        height: 250px;
+    }
+    .card-back, .card-front{
+        width: 300px;
+        height: calc(300px / var(--width))
+    }
+    .card-front{
+        top: 50%;
+        left: 10%;
+        transform: none;
+        z-index: 1;
+    }
+    .card-back{
+        top: 13%;
+        right: 10%;
+        transform: none;
+    }
+    .con{
+        font-size: 14px;
+        padding-bottom: 30px;
+    }
+    .input input{
+        font-size: 14px;
+    }
+    #card-num{
+        font-size: 17px;
+    }
+    #card-name{
+        font-size: 10px;
+    }
+    #card-exp{
+        font-size: 10px;
+    }
+    #card-cvc{
+        font-size: 10px;
+    }
+}
+
+@media (max-width: 450px){
+    .card-back, .card-front{
+        width: 250px;
+        height: calc(250px / var(--width))
+    }
+    .imgcon{
+        height: 210px;
+    }
+    .input input{
+        font-size: 14px;
+    }
+    #card-num{
+        font-size: 13px;
+    }
+    #card-name{
+        font-size: 9px;
+    }
+    #card-exp{
+        font-size: 9px;
+    }
+    #card-cvc{
+        font-size: 9px;
+    }
+}
+@media (max-width: 380px){
+    .card-back, .card-front{
+        width: 200px;
+        height: calc(200px / var(--width))
+    }
+    .done p:nth-of-type(2){
+        font-size: 13px;
+    }
+    .imgcon{
+        height: 170px;
+    }
+    #card-num{
+        font-size: 10px;
+    }
+    #card-name{
+        font-size: 7px;
+    }
+    #card-exp{
+        font-size: 7px;
+    }
+    #card-cvc{
+        font-size: 7px;
+    }
+}
